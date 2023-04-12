@@ -27,15 +27,20 @@ const datas = {
 }
 
 
-console.log(datas.section.title);
-
+// console.log();
 
 
 function hideShowSection(){
 
-        const article1 = document.createElement('article');
-        const title = document.createElement('h2');
-        const crustyFish = document.createElement('h3');
+const section =  document.querySelector('main').getElementsByTagName('section')[1];
+
+section.style.display = 'block';   
+
+// for(const data of Object.keys(datas)){
+
+    const article1 = document.createElement('article');
+        const titleSection = document.createElement('h2');
+        const crustyFishTitle = document.createElement('h3');
         const imgCrusty = document.createElement('img');
         const crustyP1 = document.createElement('p');
         const crustyP2 = document.createElement('p');
@@ -44,43 +49,79 @@ function hideShowSection(){
         
 
         const article2 = document.createElement('article');
-        const MultiFish = document.createElement('h3');
+        const MultiFishTitle = document.createElement('h3');
         const imgMulti = document.createElement('img');
         const multiP1 = document.createElement('p');
         const multiP2 = document.createElement('p');
         const multiP3 = document.createElement('p');
         const lienMulti = document.createElement('a');
         
-        document.querySelector('main').documchildNodes[1].
-                      appendChild(article1,article2);
-             article1.append(crustyFish, 
+    section.appendChild(titleSection,article1,article2);
+             article1.append(crustyFishTitle, 
                              imgCrusty,
                              crustyP1,
                              crustyP2,
                              crustyP3,
                              lienCrusty)
               
-             article2.append(MultiFish, 
+             article2.append(MultiFishTitle, 
                 imgMulti,
                 multiP1,
                 multiP2,
                 multiP3,
                 lienMulti)                      
-
-
-
+    
+   
+              titleSection.textContent = datas.section.crustyFish.title;  ;
+            // crustyfish
+              crustyFishTitle.textContent = datas.section.crustyFish.title;
+              imgCrusty.textContent = datas.section.crustyFish.img.url;
+              crustyP1.textContent = datas.section.crustyFish.para[0];
+              crustyP2.textContent = datas.section.crustyFish.para[1];
+              crustyP3.textContent = datas.section.crustyFish.para[2];
+              lienCrusty.textContent = datas.section.crustyFish.a;
+            //    multifish
         
-
-
-
-
- }   
+               imgMulti.textContent = datas.section.multiFish.img.url;
+               crustyP1.textContent = datas.section.multiFish.para[0];
+               crustyP2.textContent = datas.section.multiFish.para[1];
+               crustyP3.textContent = datas.section.multiFish.para[2];
+               lienCrusty.textContent = datas.section.multiFish.a;
+                
+}
     
 
- document.addEventListener("click", function (){
-  document.getElementById('btn-section')
-            .addEventListener('click',hideShowSection)
-//  document.getElementById('btn-aside').
-//  addEventListener('click', showHideAside)
-    });
+  
+                 
+                 
+           
+       
+  
+    
+
+//  }   
+
+
+ const btnSection = document.getElementById('btn-section')
+//  document.addEventListener("DOMContentLoaded", function() {
+//  document.addEventListener("click", function (){
+//            btnSection.addEventListener('click',  hideShowSection)
+// //  document.getElementById('btn-aside').
+// //  addEventListener('click', showHideAside)
+//     });
+// });
+
+ 
+
+ 
+
+
+
+// function onClick(){
+//    btnSection.removeEventListener('click', onClick);
+//   hideShowSection()
+// }
+
+// btnSection.addEventListener('click', onClick);
+
 
