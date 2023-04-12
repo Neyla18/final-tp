@@ -27,14 +27,18 @@ const datas = {
 }
 
 
-console.log();
+// console.log();
+
 
 function hideShowSection(){
 
-const section =  document.querySelector('main').getElementsByTagName('section')[1]
+const section =  document.querySelector('main').getElementsByTagName('section')[1];
+
 section.style.display = 'block';   
 
-        const article1 = document.createElement('article');
+for(const data of Object.keys(datas)){
+
+    const article1 = document.createElement('article');
         const titleSection = document.createElement('h2');
         const crustyFishTitle = document.createElement('h3');
         const imgCrusty = document.createElement('img');
@@ -66,25 +70,26 @@ section.style.display = 'block';
                 multiP2,
                 multiP3,
                 lienMulti)                      
-                     
-
+    
    
-            //   titleSection.textContent = datas.section.title;
-                // crustyfish
-              crustyFishTitle.textContent = datas.section.crustyFish.title;
-            //   imgCrusty.textContent = datas.section.crustyFish.img.url;
-            //   crustyP1.textContent = datas.section.crustyFish.para[0];
+            //   titleSection.textContent = test;
+            // // crustyfish
+            //   crustyFishTitle.textContent = datas[section.crustyFish.title];
+            //   imgCrusty.textContent = data.section.crustyFish.img.url;
+            //   crustyP1.textContent = data.section.crustyFish.para[0];
             //   crustyP2.textContent = datas.section.crustyFish.para[1];
             //   crustyP3.textContent = datas.section.crustyFish.para[2];
             //   lienCrusty.textContent = datas.section.crustyFish.a;
-            //    // multifish
-            //    MultiFishTitle.textContent = datas.section.multiFish.title;
+            // //    multifish
+        
             //    imgMulti.textContent = datas.section.multiFish.img.url;
             //    crustyP1.textContent = datas.section.multiFish.para[0];
             //    crustyP2.textContent = datas.section.multiFish.para[1];
             //    crustyP3.textContent = datas.section.multiFish.para[2];
             //    lienCrusty.textContent = datas.section.multiFish.a;
                 
+}
+    
 
   
                  
@@ -96,14 +101,17 @@ section.style.display = 'block';
 
  }   
 
+
  const btnSection = document.getElementById('btn-section')
+ document.addEventListener("DOMContentLoaded", function() {
  document.addEventListener("click", function (){
            btnSection.addEventListener('click',  hideShowSection)
 //  document.getElementById('btn-aside').
 //  addEventListener('click', showHideAside)
     });
+});
 
-
+ 
 
  
 
@@ -115,3 +123,10 @@ section.style.display = 'block';
 // }
 
 // btnSection.addEventListener('click', onClick);
+
+const obj = { France: "Paris", England: "London" };
+// Iterate over the property names:
+for (const country of Object.keys(obj)) {
+  const capital = obj[country];
+  console.log( capital);
+}
